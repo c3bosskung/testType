@@ -9,7 +9,22 @@ let score = ref(0)
 
 let history = ref({})
 
-let word = 'Lots of websites online will let you plug your data in to run these tests for free.'
+// let wordArr = ['See how your sentence looks with different synonyms.',
+//   'Lots of websites online will let you plug your data in to run these tests for free.']
+
+let wordArr = ['see', 'how', 'your', 'sentence', 'looks', 'with', 'different', 'Lots', 'of', 'websites', 'online',
+'will', 'you', 'plug', 'your', 'data', 'in', 'to', 'run', 'these', 'tests', 'for', 'free']
+
+let word = []
+
+for (let i = 0; i < 20; i++) {
+  let ranWord = wordArr[Math.floor(Math.random() * wordArr.length)]
+  if(word.every(e => e !== ranWord)) {
+    i--
+    word.push(ranWord)
+  }
+}
+word = word.join(' ')
 word.split('').forEach((e, i) => history.value[i] = false)
 let spiltWord = word.split(' ')
 
