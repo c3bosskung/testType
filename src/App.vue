@@ -1,6 +1,7 @@
 <script setup>
 
 import {ref} from 'vue'
+import {wordArr} from "@/data/wordArr";
 
 let letter = ref([])
 let countIndex = 0
@@ -9,15 +10,17 @@ let score = ref(0)
 
 let history = ref({})
 
-let wordArr = ['see', 'how', 'your', 'sentence', 'looks', 'with', 'different', 'Lots', 'of', 'websites', 'online',
-'will', 'you', 'plug', 'your', 'data', 'in', 'to', 'run', 'these', 'tests', 'for', 'free']
-
 let word = []
 
-for (let i = 0; i < 50; i++) {
+for (let i = 0; i < 20; i++) {
   let ranWord = wordArr[Math.floor(Math.random() * wordArr.length)]
   if(word.every(e => e !== ranWord)) {
     word.push(ranWord)
+  } else {
+    i--
+  }
+  if(word.length > 20) {
+    break
   }
 }
 word = word.join(' ')
