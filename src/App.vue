@@ -17,10 +17,9 @@ let wordArr = ['see', 'how', 'your', 'sentence', 'looks', 'with', 'different', '
 
 let word = []
 
-for (let i = 0; i < 20; i++) {
+for (let i = 0; i < 50; i++) {
   let ranWord = wordArr[Math.floor(Math.random() * wordArr.length)]
   if(word.every(e => e !== ranWord)) {
-    i--
     word.push(ranWord)
   }
 }
@@ -73,7 +72,7 @@ window.addEventListener('keydown', (event) => {
 <template>
   <div class="w-full p-10 bg-orange-200">
     <div class="w-full m-5 ">
-      <h2> <b>score: </b> {{ score }}/{{ spiltWord.length }}</h2>
+      <h2> <b>score: </b> {{ score }}/{{ spiltWord.length }} {{ score === spiltWord.length? 'finish' : '' }}</h2>
       <span v-for="(item,index) in word" :key="index"
             :class=" isCorrect(word, letter, index)? 'bg-green-500' : index > countIndex - 1? 'bg-gray-500' : 'bg-red-500' ">{{
           item
