@@ -9,9 +9,6 @@ let score = ref(0)
 
 let history = ref({})
 
-// let wordArr = ['See how your sentence looks with different synonyms.',
-//   'Lots of websites online will let you plug your data in to run these tests for free.']
-
 let wordArr = ['see', 'how', 'your', 'sentence', 'looks', 'with', 'different', 'Lots', 'of', 'websites', 'online',
 'will', 'you', 'plug', 'your', 'data', 'in', 'to', 'run', 'these', 'tests', 'for', 'free']
 
