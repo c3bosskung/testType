@@ -36,7 +36,7 @@ const isCorrect = (word, letter, index) => {
 }
 
 const increaseScore = () => {
-  score.value <= spiltWord.length - 1? score.value++ : score.value = score.value
+  score.value <= spiltWord.length - 1? score.value++ : score.value
 }
 
 window.addEventListener('keydown', (event) => {
